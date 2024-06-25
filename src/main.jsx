@@ -5,8 +5,6 @@ import ReactDOM from "react-dom/client"
 // Imports required imports from "react-router-dom" to set up application routing behavior.
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// Imports required imports from Bootstrap to apply CSS.
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"
 
 // Imports the App.jsx file which works with the router.
