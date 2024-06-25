@@ -14,7 +14,7 @@ export default function PortfolioPage() {
     <div className="portfolio-page">
       <h1>Portfolio</h1>
       <p>
-        ADD DESCRIPTION OF PROJECTS HERE
+        A compiled list of my projects completed during the edX Bootcamp. More to follow!
       </p>
       <div className="portfolio-cards-container">
         <PortfolioCard

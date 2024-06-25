@@ -22,7 +22,7 @@ export default function Header() {
               About Me
             </Link>,
             <Link key={2} to="/portfolio">
-              Code
+              Portfolio
             </Link>,
             <Link key={6} to="/contact">
               Contact

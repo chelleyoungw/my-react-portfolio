@@ -22,6 +22,9 @@ export default function ResumePage() {
             <li>Javascript</li>
             <li>Node JS</li>
             <li>React</li>
+            <li>Version Control</li>
+            <li>Tailwinds</li>
+            <li>Bootstrap</li>
             <li>SQL</li>
             <li>React</li>
             <li>Office Suite</li>
