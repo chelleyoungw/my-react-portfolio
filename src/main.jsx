@@ -13,9 +13,8 @@ import "./index.css"
 import App from "./App.jsx"
 
 // Imports pages the router will use to conditionally show the appropriate views.
-import App from "./App.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
-import ProfilePage from "./pages/ProfilePage.jsx";
+import PortfolioPage from "./pages/PortfolioPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ResumePage from "./pages/ResumePage.jsx";
@@ -32,8 +31,8 @@ const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "/profile",
-        element: <ProfilePage />,
+        path: "/portfolio",
+        element: <PortfolioPage />,
       },
       {
         path: "/contact",
