@@ -1,80 +1,121 @@
+/*! ROOT */
+/* Stores repeatable values for future CSS. */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --purple: #3C1626;
+  --teal: #114D55;
+  --gold: #CFA226;
+  --blue: #1D2D49;
+  --turquoise: #5DC0A6;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/*! NORMALIZATION */
+/* Zeroes out padding and margin. + Sets a custom font. + Adjusts hashtag scrolling for fixed header. */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  scroll-margin-top: 69px;
 }
 
+/* Fixes default colors and effects applied to links. */
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Sets background color and forces content below fixed header. */
 body {
+  background-color: var(--gold);
+  margin-top: 80px;
+  /* This allows the header to be fixed. */
+  margin-bottom: 60px;
+  /* This allows the footer to be fixed. */
+}
+
+/*! HEADER AND NAVBAR */
+
+.header {
+  background-color: var(--purple);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerContents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.logo img {
+  width: 35px;
+}
+
+.logoName {
+  color: var(--teal);
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  transition: all 0.25s;
+  margin: 0;
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  column-gap: 10px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navList li {
+  color: var(--teal);
+  font-size: 16px;
+  transition: all 0.5s;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.navList li:hover {
+  color: var(--blue);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.navList li.active a {
+  color: var(--turquoise);
 }
 
-.column-container {
+/*! FOOTER */
+
+.footer {
+  background-color: var(--purple);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.footerContents {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
   align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  column-gap: 30px;
+  height: 60px;
+}
+
+.footerContents img {
+  height: 30px;
 }
 
 /*! ABOUT PAGE */
@@ -84,14 +125,14 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 140px);
-  background-color: var(--tan);
+  background-color: var(--gold);
 }
 
 .about-content-container {
   max-width: 600px;
   width: 100%;
   padding: 20px;
-  color: var(--black);
+  color: var(--purple);
 }
 
 .about-content-container h1 {
@@ -110,4 +151,176 @@ button:focus-visible {
   border-radius: 8px;
   max-width: 200px;
   height: auto;
+}
+
+/*! PORTFOLIO PAGE */
+
+.portfolio-page {
+  padding: 20px;
+  background-color: var(--gold);
+}
+
+.portfolio-page h1,
+.portfolio-page p {
+  text-align: center;
+  color: var(--purple);
+}
+
+.portfolio-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.portfolioCard {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.portfolioCard h2 {
+  color: var(--purple);
+}
+
+.portfolioCard img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.portfolioCard a {
+  display: block;
+  margin-top: 10px;
+  color: var(--turquoise);
+}
+
+.portfolioCard a:hover {
+  text-decoration: underline;
+}
+
+/*! CONTACT PAGE */
+
+/* Wrapper div */
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 140px);
+  background-color: var(--gold);
+}
+
+/* Form container */
+.contact-form-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+/* Heading */
+.contact-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--purple);
+}
+
+/* Form field label */
+.contact-page label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--purple);
+}
+
+/* Input fields */
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+  outline: none;
+  border-color: var(--turquoise);
+}
+
+/* Button */
+.contact-page button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-page button:hover {
+  background-color: var(--blue);
+}
+
+/* Error message */
+.contact-page .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/*! RESUME PAGE */
+
+.resume-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 140px);
+  background-color: var(--gold);
+}
+
+.resume-content-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.resume-content-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--purple);
+}
+
+.resume-content-container p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resume-content-container p a {
+  color: var(--turquoise);
+}
+
+.skills-section {
+  margin-bottom: 30px;
+}
+
+.skills-section h2 {
+  color: var(--purple);
+}
+
+.skills-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-section li {
+  margin-bottom: 5px;
 }
