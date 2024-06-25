@@ -7,6 +7,8 @@ Week-20 Challenge
 
  * [Description](#description)
 
+ * [Screenshot](#screenshot)
+
  * [Technologies Used](#technologies-used)
 
  * [Installation](#installation)
@@ -22,6 +24,10 @@ Week-20 Challenge
 An online portfolio to display my projects that were created during the edX MERN Full Stack Bootcamp, hosted by The University of Texas at Austin. This is a live site and will be updated with more projects and career information. This site is also a way to connect with other programmers in the community and show off my skills I have learned and cultivated into my own personal brand. The app is deployed using Netlify.
 
 [Application GitHub Repository](https://github.com/chelleyoungw/my-react-portfolio.git)
+
+## Screenshot
+
+![screenshot of project](<./src/assets/img/Screenshot 2024-06-24 205231.png>)
 
 ## Technologies Used
 
