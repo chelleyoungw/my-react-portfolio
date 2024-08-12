@@ -1,6 +1,6 @@
 import React from "react";
 
-import resumePDF from "../assets/pdf/chelle_resume_2024.pdf";
+import resumePDF from "../assets/pdf/resume.pdf";
 
 export default function ResumePage() {
   return (
